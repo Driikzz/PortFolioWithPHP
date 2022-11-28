@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* BODY */
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+
+}
+
+.main{
+    margin: auto;
+}
+
+/* HEADER */ 
+
+.header{
+    
+    display: flex;
+    align-items: center;
+    background-color: #111111;
+   
+    
+}
+    
+/* NAV */
+
+#header{
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    position: fixed; /* Make it stick/fixed */
+    width: 100%; /* Full width */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+}
+
+.header nav ul li{
+    margin-right: 40px;
+    font-size: 30px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.header nav ul a{
+    color: white;
+    text-decoration: none;   
+}
+
+.header nav ul li a:hover{
+    color: grey;
+}
+
+
+/*LOGOHEADER */ 
+header img{
+    height: 75px;
+}
+
+
+.logo-jeux{
+    margin-right: 250px;
+}
+
+
+
+/*pres*/ 
+
+.pres{
+    display: flex;
+    margin:auto
+}
+
+.image-pres img{
+    width: 450px;
+    height: 300px;
+    margin: 100px 60px 50px 300px;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 14px 15px -4px rgba(0,0,0,0.77); 
+    box-shadow: 2px 14px 15px -4px rgba(0,0,0,0.77);
+}
+
+.text-pres{
+    margin-left: 40px;
+    margin-top: 100px;
+    color: white;
+}
+
+.text-pres h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 80px;
+    text-shadow: 2px 3px 1px rgba(206,204,204,0.59);
+}
+
+.text-pres h2{
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 0px;
+    font-family: 'Bebas Neue', cursive;
+    text-shadow: 2px 3px 1px rgba(206,204,204,0.59);
+}
+
+.text-pres p{
+    color: #bbb8b8;
+    width: 600px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin: auto;
+    
+    
+}
+
+.pres-suite{
+    display: flex;
+    margin: 100px 60px 10px 300px;
+    
+}
+
+.rules-image img{
+    width: 500px;
+    height: 300px;
+    float: right;
+    -webkit-box-shadow: 2px 14px 15px -4px rgba(0,0,0,0.77); 
+    box-shadow: 2px 14px 15px -4px rgba(0,0,0,0.77);
+}
+
+.rules{
+    color: white;
+    margin-right: 200px;
+    font-family: 'Bebas Neue', cursive;
+}
+.rules h2{
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 0px;
+    text-shadow: 2px 3px 1px rgba(206,204,204,0.59);
+}
+
+.rules p{
+    color: #bbb8b8;
+    width: 500px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+}
+#image-pres{
+    margin-right: 170px;
+}
+
+/*cartes*/ 
+
+.map{
+    background-image: url("../images/bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 220px;
+    padding-top: 7px;
+    z-index: 1;
+}
+
+
+.map h2{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 60px;
+    padding-top: 50px;
+}
+
+.map h3{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 60px;
+    
+
+}
+
+
+/* block slideshow */
+.slideshow-container {
+    max-width: 480px;
+    max-height: 270px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* cacher les images */
+  .mySlides {
+    display: none;
+  }
+
+  .mySlides.fade img{
+    width: 100%;
+
+  }
+  
+  /* bouttons skip */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+  
+  /* boutton next pos */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* texte photo */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  
+
+
+  /*agents*/
+
+  .agent{
+    margin-left: 200px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+  
+  .title-agent{
+    color: white;
+    text-align: center;
+    font-family:'Bebas Neue', cursive;
+    font-size: 60px;
+    margin-bottom: 100px;
+
+  }
+
+  .agent-att{
+    display: flex;
+    margin: 0;
+    margin-right: 200px;
+  }
+  .agent-att-texte h2{
+    margin-left: 150px;
+    margin-bottom: 50px;
+    font-size: 40px;
+    color: white;
+    font-family:'Bebas Neue', cursive;
+  }
+
+  .agent-img-att img{
+    width: 70px;
+    height: 100px;
+    border: 2px solid #111111;
+    padding: 0;
+    margin-right: 8px;
+  }
+
+#easter-egg img{
+    border: none;
+
+}
+
+.agent-img-att img{
+  flex: 1;
+  background-color: #2b325a;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+.agent-img-att h4{
+    color: #bbb8b8;
+    font-family:'Bebas Neue', cursive;
+}
+
+.agent-img-att img:hover,
+.agent-img-att img:focus {
+  width: 200px;
+  height: 300px;
+  color: #333;
+}
+
+/*Gameplay*/
+
+.video iframe{
+    border: 0;
+
+}
+
+.gameplay{
+    background-image: url("../images/bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 150px;
+}
+
+.title-gameplay{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 60px;
+    padding-top: 50px;
+}
+
+.gameplay-video{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 200px;
+    margin-left: 200px;
+}
+.gameplay-video iframe{
+    width: 560px;
+    height: 315px;
+    outline: 4px double #1111;
+    outline-offset: 0px;
+}
+
+.gameplay-video{
+    text-align: center;
+}
+
+.gameplay-video h3{
+    color: #727070;
+    font-family:'Bebas Neue', cursive;
+    font-size:25px;
+}
+
+/*Formulaire Contact*/
+
+footer{
+    background-color: #111111;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+.text-contact{
+    margin-left: 100px;
+    color: #eaeaea;
+    font-family:'Bebas Neue', cursive;
+    font-size: 30px;
+}
+
+.contact-b1{
+    display: flex;
+    margin-left: 100px;
+}
+
+input{
+    background-color: #eaeaea;
+    padding: 12px;
+    border: 5px solid #eaeaea;
+    border-radius: 17px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+textarea{
+    background-color: #eaeaea;
+    margin-left: 100px;
+    border: 2px solid #eaeaea;
+    border-radius: 17px;
+    padding: 12px;
+}
+
+.bouton-footer{
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+.bouton-footer input{
+    background-color: #2b325a;
+    border: 5px solid #2b325a;
+}
+.bouton-footer input:hover{
+    color: white;
+}
+
+.copiright h3{
+    color: #bbb8b8;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.redirection{
+    margin-right: 250px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+}

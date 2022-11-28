@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@334&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@334&family=Silkscreen&display=swap');
+
+/* header */
+
+
+.row{
+    margin-bottom: 0;
+}
+
+#header-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-title .btn-floating{
+    width: 150px;
+    border-radius : 100px;
+    background-color: white;
+    margin-left: 50px;
+    
+}
+#header-title i{
+    color: black;
+}
+
+#header-title .btn-floating:hover{
+    background-color: #696969;
+}
+#header-title i:hover{
+    color: white;
+}
+
+#header-title h1{
+    margin-right: 50px;
+    font-family: 'Silkscreen', cursive;
+    margin: 20px 25px 20px 0;
+}
+
+.menu-deroulant h2{
+    margin-bottom: 70px;
+    margin-top: 0px;
+    color: #111 !important;
+}
+
+
+/*...............................................INDEX HTML.....................................*/
+
+/* white container paralax */
+
+.parallax-container:hover{
+    opacity: 0.81;
+}
+.parallax-container:hover .text-paralax {
+     opacity: 1;
+}
+ 
+.btn{
+     background-color: black;
+     color: white;
+     border-radius: 37px; 
+     border: 1px solid #000000;
+}
+ 
+.btn:hover{
+     background-color: white;
+     color: black;
+}
+ 
+.text-paralax  {
+     transition: .5s ease;
+     opacity: 0;
+     margin-top: 200px;
+}
+ 
+
+
+.parallax-container {
+    height: 400px;
+  }
+
+.parallax1 img{
+    padding-top: 180px;
+}
+
+.parallax3 img{
+    margin-bottom: 250px;
+}
+
+.parallax2 img{
+    margin-bottom: 100px;
+}
+
+p{
+    font-size: 20px;
+    color: rgb(139, 136, 136);
+}
+
+.collapsible{
+   margin-top: 50px;
+}
+.collapsible-header{
+    font-family: 'Silkscreen', cursive;
+}
+
+#skills h2{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    font-family: 'Silkscreen', cursive;
+}
+#skills h3{
+    font-family: 'Silkscreen', cursive;
+    font-size: 25px;
+}
+
+.section h2, h3{
+    font-family: 'Silkscreen', cursive;
+}
+
+.section{
+    padding-bottom: 100px;
+}
+
+
+.img-autor{
+    width: 340px;
+}
+
+.text-coll{
+    color: #8D8D8D;
+}
+
+
+/*Footer*/
+
+.page-footer{
+    background-color: #111;
+}
+/*................................................PROJET HTML.....................................*/
+
+/*Container*/
+
+.container h2{
+    font-family: 'Silkscreen', cursive;
+}
+
+.projet-title h2{
+    margin-bottom: 100px;
+    
+}
+
+.container-project img{
+    width: 400px;
+    border-radius: 82px 82px 82px 82px;
+}
+
+.container-project{
+    margin-bottom: 150px;
+}
+.container-project-margin{
+    margin-bottom: 150px;
+}
+
+/* Timeline*/
+
+.history-container h2{
+    margin-top: 100px;
+    font-family: 'Silkscreen', cursive;
+    
+}
+
+.timeline{
+    background-color: #111;
+    color: white;
+}
+.timeline-darkmode{
+    border: 1px solid #ffff;
+}
+
+
+
+.history-tl-container{
+  font-family: "Roboto",sans-serif;
+  width:50%;
+  margin:auto;
+  display:block;
+  position:relative;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.history-tl-container ul.tl{
+    margin:20px 0;
+    padding:0;
+    display:inline-block;
+
+}
+.history-tl-container ul.tl li{
+    list-style: none;
+    margin:auto;
+    margin-left:200px;
+    min-height:50px;
+    border-left:1px dashed #86D6FF;
+    padding:0 0 50px 30px;
+    position:relative;
+}
+
+.history-tl-container ul.tl li::before{
+    position: absolute;
+    left: -18px;
+    top: -5px;
+    content: " ";
+    border: 8px solid rgba(255, 255, 255, 0.74);
+    border-radius: 500%;
+    background: #258CC7;
+    height: 20px;
+    width: 20px;
+    transition: all 500ms ease-in-out;
+
+}
+.history-tl-container ul.tl li:hover::before{
+    border-color:  #258CC7;
+    transition: all 500ms ease-in-out;
+}
+ul.tl li .item-detail{
+    color:rgba(233, 227, 227, 0.664);
+    font-size:15px;
+}
+ul.tl li .timestamp{
+    color: #8D8D8D;
+    position: absolute;
+    width:100px;
+    left: -50%;
+    text-align: right;
+    font-size: 15px;
+}
+
+.pres-book-texte h2{
+    margin-bottom: 100px;
+    font-size: 40px;
+    font-family: 'Silkscreen', cursive;
+}
+.pres-book img{
+    margin-top: 50px;
+    width: 500px;
+}
+.pres-book-texte p, h4{
+    font-size: 15px;
+}
+.pres-book{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.buton-footer{
+    margin-bottom: 20px;
+
+}
+.buton-footer.btn {
+    background-color: white;
+    color: #000000;
+}
+.contact i{
+    color: #111;
+}
+
+.page-footer h5{
+    font-family: 'Silkscreen', cursive;
+}
+
+.carousel{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 2px solid white;
+    border-radius: 26px;
+}
+.carousel-text h4{
+    font-family: 'Silkscreen', cursive;
+}
+
+.modal.modal-fixed-footer{
+    height: 500px;
+}
+
+/* dark-mode */
+
+.dark-mode{
+    background-color: #111 !important; 
+    color: white !important;
+}
