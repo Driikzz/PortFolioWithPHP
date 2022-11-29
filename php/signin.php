@@ -8,8 +8,15 @@ if(empty($users)){ //vérifie si le resultat est vide !
      //non connecté
      echo "Utilisateur ou mot de passe incorrect !";
 }else{
-     $_SESSION['users'] = $users; //on enregistre que l'utilisateur est connecté
-}
+     $_SESSION['users'] = [
+          "id" => $users["id"],
+          "pseudo"=> $users["pseudo"],
+          "email" => $users["email"],
+          "country" => $users["country"],
+          "password" => $users["password"],
+          "admin" => $users["admin"]
+     ]; //on enregistre que l'utilisateur est connecté
 
-header('Location:../test.php');//on le redirige sur la page d'accueil du site !
+}
+header('Location:../index.php');//on le redirige sur la page d'accueil du site !
 ?>

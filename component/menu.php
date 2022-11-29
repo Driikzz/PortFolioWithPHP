@@ -1,3 +1,8 @@
+<?php
+  require_once "php/config.php"; 
+?>
+
+
 <header>
       <div class="row">
         <div class="col s12 grey darken-4" id="header-title">
@@ -10,12 +15,44 @@
           <li class="menu-deroulant">
             <div class="waves-effect"></div>
             <h2 class="center-align title-nav">Portfolio</h2>
+            <h3 class="black-text connexionOk">Hello  <?php
+            if(isset($_SESSION['users'])){
+              echo $_SESSION["users"]["pseudo"]; 
+            }else{
+              echo ' inconnue';
+            }
+            
+            ?> !</h3>
             <a class="txt-nav black-text center-align" href='index.php'>Accueil</a> 
             <a class='txt-nav dropdown-trigger center-align' href='#' data-target="dropdown1">Projets +</a> 
             <a class="txt-nav center-align" href="#contact">Contact</a>
-            <a class="txt-nav center-align modal-trigger" href="#modal2">Inscription</a>
+            <?php 
+            if(!isset($_SESSION['users'])){
+              echo '<a class="txt-nav center-align modal-trigger" href="#modal2">Inscription</a>';
+            }else{
+              echo '';
+            }
+            ?>
+            
             <a class="txt-nav center-align modal-trigger" href="#modal3">Connexion</a>
+            <?php
+            if(isset($_SESSION['users'])){
+              if ($_SESSION["users"]["admin"]== 1){
+                echo '<a class="txt-nav center-align modal-trigger" href="#modal3">PanelAdmin</a>';
+              }
+            }else{
+              echo '';
+            }
+            
+            ?>
             <a class="txt-nav center-align modal-trigger" href="test.php">Test</a>
+            <?php
+            if(isset($_SESSION['users'])){
+              echo '<a class="txt-nav center-align modal-trigger" href="php/logout.php">Deconnexion</a>';
+            }else{
+              echo '';
+            }
+             ?>
           </li>
         </ul>
         <ul id="dropdown1" class="dropdown-content">
@@ -36,7 +73,7 @@
             <span class="lever"></span>
             Dark
           </label>
-        </div>       
+        </div>      
       </nav>
       <div id="modal2" class="modal modaltest modal-fixed-footer">
               <div class="modal-content">
