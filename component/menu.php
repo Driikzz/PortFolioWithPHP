@@ -95,7 +95,7 @@
                         <input id="password" name="password" type="password" class="validate"> <label for="password">Password</label>
                       </div>
                     </div>
-                    <input class="modal-close waves-effect waves-green grey lighten-2 btn" type='submit' value='Inscription'/>
+                    <input class="waves-effect waves-green grey lighten-2 btn" type='submit' value='Inscription'/>
                   </form>
                 </div>
               </div>
@@ -115,7 +115,7 @@
                         <input id="password" name="password" type="password" class="validate"> <label for="password">Password</label>
                       </div>
                     </div>
-                    <input class="modal-close waves-effect waves-green grey lighten-2 btn" type='submit' value='Connexion'/>
+                    <input class=" waves-effect waves-green grey lighten-2 btn" type='submit' value='Connexion'/>
                   </form>
                 </div>
               </div>

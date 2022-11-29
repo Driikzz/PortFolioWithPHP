@@ -6,7 +6,7 @@ $pre->execute();
 $users = $pre->fetch(PDO::FETCH_ASSOC);
 if(empty($users)){ //vérifie si le resultat est vide !
      //non connecté
-     echo "Utilisateur ou mot de passe incorrect !";
+     echo 'erreur';
 }else{
      $_SESSION['users'] = [
           "id" => $users["id"],
