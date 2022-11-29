@@ -7,6 +7,7 @@ $(document).ready(function(){
     }, setTimeout(autoplay, 2500));
     $('.collapsible').collapsible();
     $('.modal').modal();
+    $('.modaltest').modal();
     $('.dropdown-trigger').dropdown({
       coverTrigger: false,
       hover: false,

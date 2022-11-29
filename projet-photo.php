@@ -43,7 +43,7 @@
                     Première étapes
                     </div>
                     <div class="item-title">
-                    Faire les Photos.
+                    Faire les Photos
                     </div>
                     <div class="item-detail">
                     Les publiers

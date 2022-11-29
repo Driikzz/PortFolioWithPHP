@@ -13,6 +13,9 @@
             <a class="txt-nav black-text center-align" href='index.php'>Accueil</a> 
             <a class='txt-nav dropdown-trigger center-align' href='#' data-target="dropdown1">Projets +</a> 
             <a class="txt-nav center-align" href="#contact">Contact</a>
+            <a class="txt-nav center-align modal-trigger" href="#modal2">Inscription</a>
+            <a class="txt-nav center-align modal-trigger" href="#modal3">Connexion</a>
+            <a class="txt-nav center-align modal-trigger" href="test.php">Test</a>
           </li>
         </ul>
         <ul id="dropdown1" class="dropdown-content">
@@ -35,4 +38,48 @@
           </label>
         </div>       
       </nav>
+      <div id="modal2" class="modal modaltest modal-fixed-footer">
+              <div class="modal-content">
+                <div class="row contact">
+                  <form class="col s12" method="post" action="php/signup.php">
+                    <div class="row">
+                      <h2 class="center-align black-text">Inscription</h2>
+                      <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i> <input id="icon_prefix" name="pseudo" type="text" class="validate"> <label for="icon_prefix">Pseudo</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <i class="material-icons prefix">explore</i><input id="icon_telephone" name="country" type="tel" class="validate"> <label for="icon_telephone">Pays</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="email" name="email" type="email" class="validate"> <label for="email">Email</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="password" name="password" type="password" class="validate"> <label for="password">Password</label>
+                      </div>
+                    </div>
+                    <input class="modal-close waves-effect waves-green grey lighten-2 btn" type='submit' value='Inscription'/>
+                  </form>
+                </div>
+              </div>
+            </div>
+        
+        
+            <div id="modal3" class="modal modaltest modal-fixed-footer">
+              <div class="modal-content">
+                <div class="row contact">
+                  <form class="col s12" method="post" action="php/signin.php">
+                    <div class="row">
+                      <h2 class="center-align black-text">Connexion</h2>
+                      <div class="input-field col s12">
+                        <input id="email" name="email" type="email" class="validate"> <label for="email">Email</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="password" name="password" type="password" class="validate"> <label for="password">Password</label>
+                      </div>
+                    </div>
+                    <input class="modal-close waves-effect waves-green grey lighten-2 btn" type='submit' value='Connexion'/>
+                  </form>
+                </div>
+              </div>
+            </div>
     </header>
