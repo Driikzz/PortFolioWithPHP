@@ -29,12 +29,13 @@
             <?php 
             if(!isset($_SESSION['users'])){
               echo '<a class="txt-nav center-align modal-trigger" href="#modal2">Inscription</a>';
+              echo '<a class="txt-nav center-align modal-trigger" href="#modal3">Connexion</a>';
             }else{
               echo '';
             }
             ?>
             
-            <a class="txt-nav center-align modal-trigger" href="#modal3">Connexion</a>
+           
             <?php
             if(isset($_SESSION['users'])){
               if ($_SESSION["users"]["admin"]== 1){
