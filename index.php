@@ -137,5 +137,13 @@
     <script src="js/jquerry.min.js"></script> 
     <script src="js/materialize.js"></script> 
     <script src="js/script.js"></script>
+    <script>
+      <?php
+    if(isset($_SESSION['erreur'])){
+      echo 'M.toast({html: "'.$_SESSION['erreur'].'"})';
+      unset($_SESSION['erreur']);
+    } 
+    ?>
+    </script>
   </body>
 </html>

@@ -4,9 +4,9 @@ $sql = "SELECT * FROM users WHERE email='".$_POST['email']."' AND password='".$_
 $pre = $pdo->prepare($sql); 
 $pre->execute();
 $users = $pre->fetch(PDO::FETCH_ASSOC);
+
 if(empty($users)){ //vérifie si le resultat est vide !
-     //non connecté
-     echo 'erreur';
+     $_SESSION['erreur'] = 'Mot de passe ou email invalide';                                                          
 }else{
      $_SESSION['users'] = [
           "id" => $users["id"],
@@ -16,7 +16,10 @@ if(empty($users)){ //vérifie si le resultat est vide !
           "password" => $users["password"],
           "admin" => $users["admin"]
      ]; //on enregistre que l'utilisateur est connecté
+     
 
 }
-header('Location:../index.php');//on le redirige sur la page d'accueil du site !
+
+    
+header('Location:../index.php?');
 ?>

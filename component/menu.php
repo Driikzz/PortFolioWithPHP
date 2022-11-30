@@ -39,7 +39,7 @@
             <?php
             if(isset($_SESSION['users'])){
               if ($_SESSION["users"]["admin"]== 1){
-                echo '<a class="txt-nav center-align modal-trigger" href="#modal3">PanelAdmin</a>';
+                echo '<a class="txt-nav center-align modal-trigger" href="panelAdmin.php">PanelAdmin</a>';
               }
             }else{
               echo '';
@@ -115,9 +115,11 @@
                         <input id="password" name="password" type="password" class="validate"> <label for="password">Password</label>
                       </div>
                     </div>
+                    
                     <input class=" waves-effect waves-green grey lighten-2 btn" type='submit' value='Connexion'/>
                   </form>
                 </div>
               </div>
             </div>
     </header>
+   
