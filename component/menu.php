@@ -39,14 +39,14 @@
             <?php
             if(isset($_SESSION['users'])){
               if ($_SESSION["users"]["admin"]== 1){
-                echo '<a class="txt-nav center-align modal-trigger" href="panelAdmin.php">PanelAdmin</a>';
+                echo '<a class="txt-nav center-align " href="panelAdmin.php">PanelAdmin</a>';
               }
             }else{
               echo '';
             }
             
             ?>
-            <a class="txt-nav center-align modal-trigger" href="test.php">Test</a>
+            <a class="txt-nav center-align modal-trigger" href="projetsTest">Test</a>
             <?php
             if(isset($_SESSION['users'])){
               echo '<a class="txt-nav center-align modal-trigger" href="php/logout.php">Deconnexion</a>';
