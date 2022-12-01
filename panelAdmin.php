@@ -65,7 +65,7 @@
             <div id="modal4" class="modal modaltest modal-fixed-footer">
                   <div class="modal-content">
                     <div class="row contact">
-                      <form class="col s12" method="post" action="php/editProject.php">
+                      <form class="col s12" method="post" enctype="multipart/form-data" action="php/editProject.php">
                       <div class="row">
                         <h2 class="center-align black-text">Nouveau projet</h2>
                         titre Principal<input type="text" name="first_title_project" >
@@ -132,9 +132,7 @@
             while($users = $recupUsers->fetch()){
 
                 ?>
-
-                <p><?= $users['id']." ".$users['pseudo']." ".$users['email']." ".$users['password']." ".$users['country']; ?><a class="material-icons" href="php/deleteUsers.php?id=<?= $users['id']; ?>">delete_forever</a></p>
-
+                <p><?= $users['id']." ".$users['pseudo']." ".$users['email']." ".$users['password']." ".$users['admin']; ?><a class="material-icons" href="php/deleteUsers.php?id=<?= $users['id']; ?>">delete_forever</a><a class="material-icons" href="php/modifierAdmin.php?id=<?= $users['id']; ?>">create</a></p></p>
                 <?php
 
             }

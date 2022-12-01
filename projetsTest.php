@@ -1,7 +1,7 @@
 <?php 
 require_once "php/config.php";
-
-$recupProjects = $pdo->query('SELECT * FROM projects');
+$getId = $_GET['id'];
+$recupProjects = $pdo->query('SELECT * FROM projects WHERE id = '.$getId);
 $projets = $recupProjects->fetch() ;
 ?>
 
@@ -34,14 +34,14 @@ $projets = $recupProjects->fetch() ;
         
         <div class="row container container-project">
             <div class="col s12 m6 l6 right-align">
-            <img class="z-depth-3" src="img/projet2-img1.jpg" alt="projet2-img1">
+            <img class="z-depth-3" src="<?php echo $projets['images_one']; ?>" alt="projet2-img1">
             <h3><?php echo $projets['title_one']; ?></h3>
             <p><?php echo $projets['paragraphe_one']; ?></p>
             </div>
             <div class="col s12 m6 l6">
             <h3><?php echo $projets['title_two']; ?></h3>
             <p><?php echo $projets['paragraphe_two']; ?></p>
-            <img class="z-depth-3" src="img/projet2-img2.png" alt="projet2-img2"></div>
+            <img class="z-depth-3" src="<?php echo $projets['images_two']; ?>" alt="projet2-img2"></div>
         </div>
         <div class="row timeline">
             <div class="col s12 center-align history-container">
@@ -112,7 +112,7 @@ $projets = $recupProjects->fetch() ;
         </div>
         
         <div class="row container pres-book">
-            <div class="col s12 l6 center-align"><img src="img/projet2-img3.png" alt="projet2-img3"></div>
+            <div class="col s12 l6 center-align"><img src="<?php echo $projets['images_resume']; ?>" alt="projet2-img3"></div>
             <div class="pres-book-texte col s12 l6">
             <h2><?php echo $projets['title_resume']; ?></h2>
             <h4>Résumé :</h4>
