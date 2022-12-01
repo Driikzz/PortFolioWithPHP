@@ -1,57 +1,41 @@
 <?php require_once "php/config.php"; ?>
-
+    
 <!DOCTYPE html>
 
 <html lang="fr">
 
   <head>
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <link type="text/css" rel="stylesheet" href="css/materialize.css">
-
     <link rel="stylesheet" href="css/style.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
     <title>Portfolio</title>
-
     <meta charset="utf-8">
-
     <meta name="description" content="Ceci est notre portfolio, pour exposer notres travail, au monde entier !">
-
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
-
-   
-
   </head>
 
  
-
   <body class="test">
-
- 
-
+  <?php
+    if(!isset($_SESSION['users'])){
+        header('Location:index.php');
+    }
+    if(isset($_SESSION['users'])){
+      if ($_SESSION["users"]["admin"]== 0){
+        header('Location:index.php');
+      }
+  }   
+  ?> 
     <?php
-
     $page = "accueil";
-
     require "component/menu.php";
-
     ?>
-
- 
-
     <div class="row container">
-
       <div class="col s12 center-align projet-title">
-        <h2>Espace de connexion admin</h2>
-        
+        <h2>Espace de connexion admin</h2> 
       </div>
-
     </div>
-
-   
 
     <div class="section white black-text test">
 
@@ -62,6 +46,18 @@
             <h2>Gestions des projets </h2>
             <a class="modal-trigger" href="#modal4">Crée un nouveau projet</a>
             <h3>Listes de projets : </h3>
+            <?php
+            $sqlProject = "SELECT id,first_title_project FROM projects"; 
+            $pre = $pdo->prepare($sqlProject); 
+            $pre->execute();
+            $idProject = $pre->fetchAll(PDO::FETCH_ASSOC);
+            ?>
+            <?php
+            foreach($idProject as $key => $pro){ ?>
+            <p>
+              <a href="projetsTest.php?id=<?php echo $pro['id'] ?>"><?php echo $pro['first_title_project'] ?></a><a class="material-icons" href="php/deleteProject.php?id=<?= $pro['id']; ?>">delete_forever</a>
+            </p>
+          <?php } ?>
             <div id="modal4" class="modal modaltest modal-fixed-footer">
                   <div class="modal-content">
                     <div class="row contact">
@@ -110,11 +106,9 @@
                         <input class="waves-effect waves-green grey lighten-2 btn" type='submit' name="envoie" value='Valider'/>
                       </div>
                       </form>
-                      
                     </div>
                   </div>
               </div>
-
         </div>
 
        
@@ -122,41 +116,26 @@
         <div class="col s12 l6">
 
             <h2>Liste des inscrits</h2>
-
             <p><?php echo 'ID'." | ".'Pseudo'." | ".'Email'." | ".'Password'." | ".'Country'?></p>
-
             <?php
-
             $recupUsers = $pdo->query('SELECT * FROM users');
 
             while($users = $recupUsers->fetch()){
-
                 ?>
-
                 <p><?= $users['id']." ".$users['pseudo']." ".$users['email']." ".$users['password']." ".$users['country']; ?><a class="material-icons" href="php/deleteUsers.php?id=<?= $users['id']; ?>">delete_forever</a></p>
-
                 <?php
-
             }
-
         ?>
-
-   
-
         </div>
-
       </div>
-
     </div>
-
- 
-
     <script src="js/jquerry.min.js"></script>
-
     <script src="js/materialize.js"></script>
-
     <script src="js/script.js"></script>
-
   </body>
 
 </html>
+
+
+
+  

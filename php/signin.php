@@ -1,6 +1,6 @@
 <?php 
 require_once "config.php"; 
-$sql = "SELECT * FROM users WHERE email='".$_POST['email']."' AND password='".$_POST['password']."'"; 
+$sql = "SELECT * FROM users WHERE email='".$_POST['email']."' AND password='".SHA1($_POST['password'])."'"; 
 $pre = $pdo->prepare($sql); 
 $pre->execute();
 $users = $pre->fetch(PDO::FETCH_ASSOC);

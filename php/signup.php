@@ -1,7 +1,6 @@
 <?php 
 require_once "config.php"; 
-$sql = "INSERT INTO users(pseudo,email,country,password) VALUES(:pseudo,:email,:country,:password)";
-
+$sql = "INSERT INTO users(pseudo,email,country,password) VALUES(:pseudo,:email,:country,SHA1(:password))";
 $dataBinded=array(
     ':pseudo'=> $_POST['pseudo'],
     ':email' => $_POST['email'],

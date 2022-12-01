@@ -53,7 +53,7 @@ $projets = $recupProjects->fetch() ;
                     Première étapes
                     </div>
                     <div class="item-title">
-                    ..................................
+                    -------------
                     <?php echo $projets['title_one_timeline']; ?>
                     </div>
                     <div class="item-detail">
