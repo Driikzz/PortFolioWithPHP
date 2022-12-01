@@ -295,3 +295,7 @@ ul.tl li .timestamp{
     background-color: #111 !important; 
     color: white !important;
 }
+
+#input{
+    width:20px;
+}

@@ -133,7 +133,12 @@
 
                 ?>
 
-                <p><?= $users['id']." ".$users['pseudo']." ".$users['email']." ".$users['password']." ".$users['country']; ?><a class="material-icons" href="php/deleteUsers.php?id=<?= $users['id']; ?>">delete_forever</a></p>
+                <p><?= $users['id']." ".$users['pseudo']." ".$users['email']." ".$users['password']." ".$users['country']; ?><a class="material-icons" href="php/deleteUsers.php?id=<?= $users['id']; ?>">delete_forever</a><a class="material-icons" href="ModifierAdmin.php?id=<?= $users['id']; ?>">vpn_key</a></p>
+                <p>Mofifier le pseudo</p>
+                <form method="post" action="ModifierPseudo.php">
+                <input type='pseudo' name='pseudo'>
+                <input type='submit' value='Modifier' />
+                </form>
 
                 <?php
 
