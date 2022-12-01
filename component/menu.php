@@ -1,5 +1,9 @@
 <?php
-  require_once "php/config.php"; 
+  require_once "php/config.php";
+   $sqlProject = "SELECT id,first_title_project FROM projects"; 
+   $pre = $pdo->prepare($sqlProject); 
+   $pre->execute();
+   $idProject = $pre->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -35,7 +39,7 @@
             }
             ?>
             
-           
+            
             <?php
             if(isset($_SESSION['users'])){
               if ($_SESSION["users"]["admin"]== 1){
@@ -44,9 +48,12 @@
             }else{
               echo '';
             }
-            
             ?>
-            <a class="txt-nav center-align modal-trigger" href="projetsTest">Test</a>
+            
+            <a class="txt-nav center-align modal-trigger" href="projetsTest.php?id=6">Test</a>
+
+
+
             <?php
             if(isset($_SESSION['users'])){
               echo '<a class="txt-nav center-align modal-trigger" href="php/logout.php">Deconnexion</a>';
@@ -66,6 +73,12 @@
           <li>
             <a href="projet-siteweb.php">Site Web</a>
           </li>
+          <?php
+          foreach($idProject as $key => $pro){ ?>
+            <li>
+              <a href="projetsTest.php?id=<?php echo $pro['id'] ?>"><?php echo $pro['first_title_project'] ?></a>
+            </li>
+          <?php } ?>
         </ul> 
         <div class="switch center-align">
           <label>
