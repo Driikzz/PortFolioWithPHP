@@ -116,13 +116,18 @@
         <div class="col s12 l6">
 
             <h2>Liste des inscrits</h2>
-            <p><?php echo 'ID'." | ".'Pseudo'." | ".'Email'." | ".'Password'." | ".'Country'?></p>
+            <p><?php echo 'ID'." | ".'Pseudo'." | ".'Email'." | ".'country'." | ".'admin'?></p>
             <?php
             $recupUsers = $pdo->query('SELECT * FROM users');
 
             while($users = $recupUsers->fetch()){
                 ?>
-                <p><?= $users['id']." ".$users['pseudo']." ".$users['email']." ".$users['password']." ".$users['country']; ?><a class="material-icons" href="php/deleteUsers.php?id=<?= $users['id']; ?>">delete_forever</a></p>
+                <p><?= $users['id']." ".$users['pseudo']." ".$users['email']." ".$users['country']." ".$users['admin']; ?><a class="material-icons" href="php/deleteUsers.php?id=<?= $users['id']; ?>">delete_forever</a><a class="material-icons" href="ModifierAdmin.php?id=<?= $users['id']; ?>">vpn_key</a></p>
+                <form method="post" action="ModifierPseudo.php">
+                  <input type="hidden" name="id" value="<?php echo $users['id'] ?>">
+                  <input type='texte' name='pseudo' />
+                  <input type='submit' value='Modifier'/>
+                </form>
                 <?php
             }
         ?>

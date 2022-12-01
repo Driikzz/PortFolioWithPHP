@@ -1,3 +1,9 @@
+<?php 
+require_once "php/config.php";
+$recupProjects = $pdo->query('SELECT * FROM projects');
+$projets = $recupProjects->fetch() ;
+?>
+
 <footer class="page-footer" id="contact">
       <div class="container">
         <div class="row">
@@ -35,7 +41,7 @@
           <div class="col l4 offset-l2 s12 carousel-text">
             <h4 class="white-text">Nos Projet en images</h4>
            <div class="carousel carousel-slider">
-            <a class="carousel-item" href="projet-culinaire.html"><img src="img/projet1-img1.jpg" alt=".."></a> 
+            <a class="carousel-item" href="projet-culinaire.html"><img src="<?php echo $projets['images_resume']; ?>" alt=".."></a> 
             <a class="carousel-item" href="projet-photo.html"><img src="img/projet2-img1.jpg" alt=".."></a> 
             <a class="carousel-item" href="projet-siteweb.html"><img src="img/projet3-img1.jpg" alt=".."></a>
             </div>
