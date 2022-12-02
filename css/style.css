@@ -44,6 +44,13 @@
     color: #111 !important;
 }
 
+.connexionOk{
+    font-size: 20px;
+    margin-left: 25%;
+    margin-bottom: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 
 /*...............................................INDEX HTML.....................................*/
 
@@ -287,4 +294,8 @@ ul.tl li .timestamp{
 .dark-mode{
     background-color: #111 !important; 
     color: white !important;
+}
+
+#input{
+    width:20px;
 }

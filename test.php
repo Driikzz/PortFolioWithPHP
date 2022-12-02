@@ -13,3 +13,18 @@
     password <input type='password' name='password' />
     <input type='submit' value='Me connecter' />
 </form>
+<?php
+  require_once "php/config.php"; 
+  var_dump($_SESSION);
+  foreach ($_SESSION as $row){
+    echo('<table>');
+    foreach ($row as $value){
+        echo "<tr><td>'$value'</td></tr>";
+        
+    }
+    echo('</table>');
+   
+    
+}
+?>
+

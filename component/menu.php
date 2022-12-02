@@ -1,3 +1,12 @@
+<?php
+  require_once "php/config.php";
+   $sqlProject = "SELECT id,first_title_project FROM projects"; 
+   $pre = $pdo->prepare($sqlProject); 
+   $pre->execute();
+   $idProject = $pre->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+
 <header>
       <div class="row">
         <div class="col s12 grey darken-4" id="header-title">
@@ -10,12 +19,43 @@
           <li class="menu-deroulant">
             <div class="waves-effect"></div>
             <h2 class="center-align title-nav">Portfolio</h2>
+            <h3 class="black-text connexionOk">Hello  <?php
+            if(isset($_SESSION['users'])){
+              echo $_SESSION["users"]["pseudo"]; 
+            }else{
+              echo ' inconnue';
+            }
+            
+            ?> !</h3>
             <a class="txt-nav black-text center-align" href='index.php'>Accueil</a> 
             <a class='txt-nav dropdown-trigger center-align' href='#' data-target="dropdown1">Projets +</a> 
             <a class="txt-nav center-align" href="#contact">Contact</a>
-            <a class="txt-nav center-align modal-trigger" href="#modal2">Inscription</a>
-            <a class="txt-nav center-align modal-trigger" href="#modal3">Connexion</a>
-            <a class="txt-nav center-align modal-trigger" href="test.php">Test</a>
+            <?php 
+            if(!isset($_SESSION['users'])){
+              echo '<a class="txt-nav center-align modal-trigger" href="#modal2">Inscription</a>';
+              echo '<a class="txt-nav center-align modal-trigger" href="#modal3">Connexion</a>';
+            }else{
+              echo '';
+            }
+            ?>
+            
+            
+            <?php
+            if(isset($_SESSION['users'])){
+              if ($_SESSION["users"]["admin"]== 1){
+                echo '<a class="txt-nav center-align " href="panelAdmin.php">PanelAdmin</a>';
+              }
+            }else{
+              echo '';
+            }
+            ?>     
+            <?php
+            if(isset($_SESSION['users'])){
+              echo '<a class="txt-nav center-align modal-trigger" href="php/logout.php">Deconnexion</a>';
+            }else{
+              echo '';
+            }
+             ?>
           </li>
         </ul>
         <ul id="dropdown1" class="dropdown-content">
@@ -28,6 +68,12 @@
           <li>
             <a href="projet-siteweb.php">Site Web</a>
           </li>
+          <?php
+          foreach($idProject as $key => $pro){ ?>
+            <li>
+              <a href="projetsTest.php?id=<?php echo $pro['id'] ?>"><?php echo $pro['first_title_project'] ?></a>
+            </li>
+          <?php } ?>
         </ul> 
         <div class="switch center-align">
           <label>
@@ -36,7 +82,7 @@
             <span class="lever"></span>
             Dark
           </label>
-        </div>       
+        </div>      
       </nav>
       <div id="modal2" class="modal modaltest modal-fixed-footer">
               <div class="modal-content">
@@ -57,7 +103,7 @@
                         <input id="password" name="password" type="password" class="validate"> <label for="password">Password</label>
                       </div>
                     </div>
-                    <input class="modal-close waves-effect waves-green grey lighten-2 btn" type='submit' value='Inscription'/>
+                    <input class="waves-effect waves-green grey lighten-2 btn" type='submit' value='Inscription'/>
                   </form>
                 </div>
               </div>
@@ -77,9 +123,11 @@
                         <input id="password" name="password" type="password" class="validate"> <label for="password">Password</label>
                       </div>
                     </div>
-                    <input class="modal-close waves-effect waves-green grey lighten-2 btn" type='submit' value='Connexion'/>
+                    
+                    <input class=" waves-effect waves-green grey lighten-2 btn" type='submit' value='Connexion'/>
                   </form>
                 </div>
               </div>
             </div>
     </header>
+   

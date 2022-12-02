@@ -22,7 +22,7 @@
     <div class="parallax-container">
       <div class="parallax parallax1"><img src="img/paralax1.jpg" alt="image restaurant néon"></div>
       <div class="text-paralax center-align">
-        <a href="projet-culinaire.html" class="waves-effect waves-light btn">Projet 1</a>
+        <a href="projet-culinaire.php" class="waves-effect waves-light btn">Projet 1</a>
       </div>
     </div>
     
@@ -97,7 +97,7 @@
     <div class="parallax-container hoverable">
       <div class="parallax parallax2"><img src="img/paralax1.jpg" alt="image restaurant néon"></div>
       <div class="text-paralax center-align">
-        <a href="projet-photo.html" class="waves-effect waves-light btn">Projet 2</a>
+        <a href="projet-photo.php" class="waves-effect waves-light btn">Projet 2</a>
       </div>
     </div>
     
@@ -125,7 +125,7 @@
     <div class="parallax-container hoverable">
       <div class="parallax parallax3"><img src="img/paralax1.jpg" alt="images restaurant néon"></div>
       <div class="text-paralax center-align">
-        <a href="projet-siteweb.html" class="waves-effect waves-light btn">Projet 3</a>
+        <a href="projet-siteweb.php" class="waves-effect waves-light btn">Projet 3</a>
       </div>
     </div>
     
@@ -137,5 +137,13 @@
     <script src="js/jquerry.min.js"></script> 
     <script src="js/materialize.js"></script> 
     <script src="js/script.js"></script>
+    <script>
+      <?php
+    if(isset($_SESSION['erreur'])){
+      echo 'M.toast({html: "'.$_SESSION['erreur'].'"})';
+      unset($_SESSION['erreur']);
+    } 
+    ?>
+    </script>
   </body>
 </html>
