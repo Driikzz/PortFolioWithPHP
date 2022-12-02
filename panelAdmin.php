@@ -122,7 +122,7 @@
 
             while($users = $recupUsers->fetch()){
                 ?>
-                <p><?= $users['id']." ".$users['pseudo']." ".$users['email']." ".$users['country']." ".$users['admin']; ?><a class="material-icons" href="php/deleteUsers.php?id=<?= $users['id']; ?>">delete_forever</a><a class="material-icons" href="ModifierAdmin.php?id=<?= $users['id']; ?>">vpn_key</a></p>
+                <p><?= $users['id']." ".$users['pseudo']." ".$users['email']." ".$users['country']." ".$users['admin']; ?><a class="material-icons" href="php/deleteUsers.php?id=<?= $users['id']; ?>">delete_forever</a><a class="material-icons" href="ModifierAdmin.php?id=<?= $users['id']; ?>">key</a><a class="large material-icons" href="RoleUsers.php?id=<?= $users['id']; ?>">lock</a>
                 <form method="post" action="ModifierPseudo.php">
                   <input type="hidden" name="id" value="<?php echo $users['id'] ?>">
                   <input type='texte' name='pseudo' />

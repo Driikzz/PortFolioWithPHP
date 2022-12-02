@@ -49,7 +49,6 @@
               echo '';
             }
             ?>     
-            <a class="txt-nav center-align modal-trigger" href="projetsTest.php?id=6">Test</a>
             <?php
             if(isset($_SESSION['users'])){
               echo '<a class="txt-nav center-align modal-trigger" href="php/logout.php">Deconnexion</a>';
